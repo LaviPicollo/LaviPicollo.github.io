@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lavinia Picollo</title>
+<style>
+  :root{ --ink:#111; --muted:#6f6f6f; --rule:#dcdcda; --measure:42rem; }
+  *{box-sizing:border-box}
+  body{margin:0; background:#fdfdfc; color:var(--ink);
+    font-family:"Libertinus Serif","Hoefler Text",Palatino,"Palatino Linotype",Georgia,serif;
+    font-size:18px; line-height:1.55;}
+  .wrap{max-width:60rem; margin:0 auto; padding:3rem 1.6rem 6rem;}
+  a{color:inherit; text-decoration:underline; text-underline-offset:.14em; text-decoration-thickness:.5px}
+  a:hover{text-decoration-thickness:1.4px}
+  p{margin:0 0 1rem}
+
+  /* header */
+  h1{font-size:2rem; font-weight:400; margin:0 0 .2rem; letter-spacing:.01em}
+  .sub{color:var(--muted); margin:0 0 .9rem}
+  .toplinks{font-size:.9rem; margin:0 0 2rem}
+  .toplinks a{margin-right:1.1rem}
+  .lede{max-width:var(--measure)}
+
+  /* jump nav — sticky, unobtrusive */
+  .jump{position:sticky; top:0; background:#fdfdfcee; backdrop-filter:blur(4px);
+    border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+    padding:.55rem 0; margin:0 0 2.4rem; font-size:.78rem; letter-spacing:.13em; text-transform:uppercase}
+  .jump a{color:var(--muted); text-decoration:none; margin-right:1.5rem}
+  .jump a:hover{color:var(--ink)}
+
+  /* sections with margin labels, echoing the CV */
+  section{display:grid; grid-template-columns:9rem 1fr; gap:0 2rem; margin:0 0 3.4rem; scroll-margin-top:3.4rem}
+  section > h2{grid-column:1; margin:.3rem 0 0; font-size:.82rem; font-weight:400;
+    font-variant:small-caps; letter-spacing:.06em; text-align:right; color:var(--muted)}
+  section > .body{grid-column:2; max-width:var(--measure)}
+  @media (max-width:760px){
+    section{grid-template-columns:1fr}
+    section > h2{text-align:left; margin-bottom:.7rem}
+  }
+
+  h3.sub2{font-size:1rem; font-style:italic; font-weight:400; margin:2.1rem 0 1rem}
+  h3.sub2:first-child{margin-top:0}
+  .entries{display:grid; grid-template-columns:5.6rem 1fr; gap:1.05rem 1rem; margin:0}
+  .entries .d{text-align:right; color:var(--muted); font-size:.9rem; padding-top:.15em}
+  @media (max-width:760px){
+    .entries{grid-template-columns:1fr; gap:.2rem}
+    .entries .d{text-align:left}
+    .entries .e{margin-bottom:1rem}
+  }
+  .title{font-weight:600}
+  .meta{color:var(--muted)}
+  .links{font-size:.85rem; color:var(--muted); margin-top:.12rem}
+  .links a{color:var(--muted)}
+  details{margin-top:.3rem}
+  details summary{font-size:.85rem; color:var(--muted); cursor:pointer; list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"▸ "; }
+  details[open] summary::before{content:"▾ "; }
+  details .ab{font-size:.92rem; color:#3a3a3a; margin:.45rem 0 0; padding-left:.9rem; border-left:2px solid var(--rule)}
+  ul.plain{margin:0; padding-left:1.1rem}
+  ul.plain li{margin:0 0 .55rem}
+  footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--rule); color:var(--muted); font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Lavinia Picollo</h1>
+  <p class="sub">Assistant Professor &middot; Department of Philosophy, National University of Singapore<br>
+    <a href="mailto:l.picollo@nus.edu.sg">l.picollo@nus.edu.sg</a></p>
+  <p class="toplinks">
+    <a href="cv.pdf">CV</a><a href="#">PhilPapers</a>
+  </p>
+
+  <div class="lede">
+    <p>I work in philosophical logic and the philosophy of logic and mathematics, and more occasionally in metaphysics and the philosophy of language.</p>
+    <p>Most of my current work is in metasemantics; in particular, how logical and mathematical vocabulary comes to mean what it does. I am mainly concerned with questions about categoricity and determinacy raised by limiting metatheoretic results such as Gödelian incompleteness, compactness, and the Löwenheim&ndash;Skolem theorems, and with how far views like logical inferentialism and mathematical conventionalism can get around them. I am also interested in logical and mathematical pluralism, higher-order logic, absolute generality, logicality, and quantifier variance. My earlier work was on truth, with a focus on deflationism, disquotation, and the patterns of reference behind the paradoxes.</p>
+    <p>I am an editor of <a href="https://www.philosophical-logic.org">Philosophical Logic</a> and a subject editor of the <a href="https://plato.stanford.edu/">Stanford Encyclopedia of Philosophy</a>. I took my PhD at the University of Buenos Aires in 2015 and held positions at LMU Munich and UCL before moving to Singapore.</p>
+  </div>
+
+  <nav class="jump">
+    <a href="#research">Research</a><a href="#publications">Publications</a><a href="#talks">Talks</a><a href="#teaching">Teaching</a><a href="#elsewhere">Elsewhere</a>
+  </nav>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="body">
+
+      <p>For a word like &ldquo;cat&rdquo; there is a plausible story about how the meaning gets fixed: we point at cats while saying it. For &ldquo;not&rdquo; and &ldquo;plus&rdquo; there is no such story. Inferentialists hold that the meaning of logical and mathematical vocabulary is fixed exclusively by inference rules. But any rules we are in a position to follow can plausibly be captured by a recursively axiomatisable theory &mdash; and Carnap's categoricity problem, the Löwenheim&ndash;Skolem theorems and Gödel's first incompleteness theorem each show that theories of that kind fail to pin down the meanings we take ourselves to have. How far the inferentialist can withstand this is the question most of my work addresses.</p>
+
+      <h3 class="sub2">Quantification</h3>
+      <p><a href="#publications">Mysterious Quantifiers</a> argues that Carnap's problem for the first-order quantifiers resists the usual solutions, and that retreating to an infinitary calculus does not help either. Inferentialism then forces a revisionary view on which quantified sentences have what I call <i>sentential</i> truth-conditions. <i>A New Semantics for Higher-Orderese</i> develops that semantics into a way out of the impasse in higher-order metaphysics: it is given in a familiar first-order language, as the higher-order sceptic demands, while avoiding any reading of higher-order quantification as generalisation over a domain of objects.</p>
+
+      <h3 class="sub2">Determinacy and pluralism</h3>
+      <p>With Daniel Waxman: <a href="#publications">Internalism and the Determinacy of Mathematics</a> argues that Button and Walsh's categoricity and intolerance results do not deliver determinacy, being schematic and leaving no fact of the matter as to which way a sentence goes. <a href="#publications">Arithmetical Pluralism and the Objectivity of Syntax</a> dismantles the Parsons and Putnam&ndash;Koellner objections, replaces them with a stronger argument that pluralism about arithmetic entails pluralism about syntax, and finds that a stable pluralist position survives it.</p>
+
+      <h3 class="sub2">Formality</h3>
+      <p>Logical constants are usually called formal on the grounds that their semantic values are invariant under substitutions of individuals. Every invariance account faces well-known difficulties, and there is reason to think the difficulties come from the focus on semantic values. <i>Formality Without Invariance</i> works out an inferentialist alternative in which constants are interpreted by sets of rules and invariance drops out of the picture entirely.</p>
+
+      <h3 class="sub2">In progress</h3>
+      <p>Whether open-endedness rescues categoricity arguments &mdash; I argue that Brincus's objection would sink almost all of them if it worked, and that it does not. Whether we can, as Warren claims, follow the ω-rule. And whether mathematical conventionalism survives the observation that induction schemas admit instances containing empirical vocabulary.</p>
+
+      <p>The long-term aim is a metasemantic account of logic and mathematics, most likely along inferentialist lines. My own inclination is that on such an account logical and mathematical content turns out to be highly indeterminate &mdash; not through any defect in the account, but because that is how things stand.</p>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="body">
+
+      <h3 class="sub2">Articles</h3>
+      <div class="entries">
+        <div class="d">forthcoming</div>
+        <div class="e"><span class="title">Mysterious Quantifiers</span>, <span class="meta"><i>Journal of Philosophy</i></span>
+          <div class="links"><a href="#">Preprint</a></div>
+          <details><summary>Abstract</summary><p class="ab">A well-known problem, due to Carnap, concerns how the meanings of logical connectives can possibly arise from the rules governing their use. Much less discussed is an analogous problem for quantifiers. This paper argues that the problem for quantifiers is serious, resists the usual solutions, and (on plausible semantic and metasemantic assumptions) forces us into a radically revisionary view of quantifiers and the truth-conditions of quantified sentences.</p></details>
+        </div>
+
+        <div class="d">2025</div>
+        <div class="e"><span class="title">Against Generalized Comprehension</span>, <span class="meta"><i>Synthese</i> 205(89): 1&ndash;9</span>
+          <div class="links"><a href="https://doi.org/10.1007/s11229-024-04797-4">DOI</a> &middot; <a href="https://rdcu.be/d9wyw">Full text</a></div></div>
+
+        <div class="d">2024</div>
+        <div class="e"><span class="title">Arithmetical Pluralism and the Objectivity of Syntax</span>, <span class="meta"><i>Noûs</i> 59(2): 372&ndash;391, with Dan Waxman</span>
+          <div class="links"><a href="https://doi.org/10.1111/nous.12510">DOI</a> &middot; <a href="#">PDF</a></div></div>
+
+        <div class="d">2023</div>
+        <div class="e"><span class="title">Internalism and the Determinacy of Mathematics</span>, <span class="meta"><i>Mind</i> 132(528): 1028&ndash;1052, with Dan Waxman</span>
+          <div class="links"><a href="https://doi.org/10.1093/mind/fzac073">DOI</a> &middot; <a href="#">Preprint</a></div></div>
+
+        <div class="d">2022</div>
+        <div class="e"><span class="title">Higher-order Logic and Disquotational Truth</span>, <span class="meta"><i>Journal of Philosophical Logic</i> 51(4): 879&ndash;918, with Thomas Schindler</span>
+          <div class="links"><a href="https://doi.org/10.1007/s10992-022-09654-8">DOI</a> &middot; <a href="#">PDF</a></div></div>
+
+        <div class="d">2021</div>
+        <div class="e"><span class="title">Is deflationism compatible with compositional and Tarskian truth theories?</span>, <span class="meta">in <i>Modes of Truth</i>, Nicolai and Stern (eds.), Routledge, 41&ndash;68, with Thomas Schindler</span>
+          <div class="links"><a href="#">Preprint</a></div></div>
+
+        <div class="d">2020</div>
+        <div class="e"><span class="title">Reference and Truth</span>, <span class="meta"><i>Journal of Philosophical Logic</i> 49(3): 439&ndash;474</span>
+          <div class="links"><a href="https://doi.org/10.1007/s10992-019-09525-9">DOI</a></div></div>
+
+        <div class="d">2020</div>
+        <div class="e"><span class="title">Alethic Reference</span>, <span class="meta"><i>Journal of Philosophical Logic</i> 49(3): 417&ndash;438</span>
+          <div class="links"><a href="https://doi.org/10.1007/s10992-019-09524-w">DOI</a></div></div>
+
+        <div class="d">2018</div>
+        <div class="e"><span class="title">Deflationism and the function of truth</span>, <span class="meta"><i>Philosophical Perspectives</i> 32(1): 326&ndash;351, with Thomas Schindler</span>
+          <div class="links"><a href="#">PDF</a></div></div>
+
+        <div class="d">2018</div>
+        <div class="e"><span class="title">Truth in a Logic of Formal Inconsistency: How classical can it get?</span>, <span class="meta"><i>Logic Journal of the IGPL</i>, special issue on recovery operators</span>
+          <div class="links"><a href="https://doi.org/10.1093/jigpal/jzy059">DOI</a></div></div>
+
+        <div class="d">2018</div>
+        <div class="e"><span class="title">Reference in Arithmetic</span>, <span class="meta"><i>Review of Symbolic Logic</i> 11: 573&ndash;603</span>
+          <div class="links"><a href="#">DOI</a> &middot; <a href="#">Preprint</a></div></div>
+
+        <div class="d">2017</div>
+        <div class="e"><span class="title">Disquotation and Infinite Conjunctions</span>, <span class="meta"><i>Erkenntnis</i> 83: 899&ndash;928, with Thomas Schindler</span>
+          <div class="links"><a href="https://doi.org/10.1007/s10670-017-9919-x">DOI</a></div></div>
+
+        <div class="d">2016</div>
+        <div class="e"><span class="title">Minimalism, Reference, and Paradoxes</span>, <span class="meta"><i>The Logica Yearbook 2015</i>, College Publications, 163&ndash;178</span>
+          <div class="links"><a href="#">Preprint</a></div></div>
+
+        <div class="d">2013</div>
+        <div class="e"><span class="title">Notes on &omega;-inconsistent theories of truth in second-order languages</span>, <span class="meta"><i>Review of Symbolic Logic</i> 6: 733&ndash;741, with Eduardo Barrio</span>
+          <div class="links"><a href="#">DOI</a> &middot; <a href="#">Preprint</a></div></div>
+
+        <div class="d">2013</div>
+        <div class="e"><span class="title">Yablo's Paradox in Second-Order Languages</span>, <span class="meta"><i>Studia Logica</i> 101: 601&ndash;617</span>
+          <div class="links"><a href="https://doi.org/10.1007/s11225-012-9399-6">DOI</a> &middot; <a href="#">Preprint</a></div></div>
+
+        <div class="d">2012</div>
+        <div class="e"><span class="title">The Old-Fashioned Yablo Paradox</span>, <span class="meta"><i>Análisis Filosófico</i> 32: 21&ndash;29</span>
+          <div class="links"><a href="#">PDF</a></div></div>
+      </div>
+
+      <h3 class="sub2">Chapters, reviews and other</h3>
+      <div class="entries">
+        <div class="d">2021</div>
+        <div class="e"><span class="title">Review of <i>Proof and Falsity</i></span>, <span class="meta">by Nils Kürbis, <i>Analysis</i> 81(3): 595&ndash;599</span>
+          <div class="links"><a href="#">Published</a> &middot; <a href="#">Preprint</a></div></div>
+        <div class="d">2014</div>
+        <div class="e"><span class="title">La Paradoja de Yablo</span> <span class="meta">(Yablo's Paradox), in <i>Paradojas, Paradojas y más Paradojas</i>, Barrio (ed.), College Publications</span>
+          <div class="links"><a href="#">Preprint</a></div></div>
+        <div class="d">2014</div>
+        <div class="e"><span class="title">La Teoría Revisionista de la Verdad</span> <span class="meta">(The Revisionist Theory of Truth), in <i>La Lógica de la Verdad</i>, Barrio (ed.), Eudeba, 117&ndash;186, with Natalia Buacar</span>
+          <div class="links"><a href="#">Preprint</a></div></div>
+        <div class="d">2016</div>
+        <div class="e"><span class="title">Editorial and Interview with Roy T. Cook</span>, <span class="meta"><i>The Reasoner</i> 10(1): 99&ndash;102</span>
+          <div class="links"><a href="#">PDF</a></div></div>
+        <div class="d">2015</div>
+        <div class="e"><span class="title">Verdad. Deflacionismo, Referencia y Paradojas</span> <span class="meta">PhD thesis, University of Buenos Aires</span>
+          <div class="links"><a href="#">PDF</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TALKS ============ -->
+  <section id="talks">
+    <h2>Talks</h2>
+    <div class="body">
+      <div class="entries">
+        <div class="d">Oct 2026</div>
+        <div class="e">TBA &mdash; <span class="meta"><i>Entia et Nomina</i>, Shanxi University (keynote)</span></div>
+        <div class="d">Jan 2026</div>
+        <div class="e">&ldquo;Mathematics is Hostage to the World&rdquo; &mdash; <span class="meta">University of Toronto</span></div>
+        <div class="d">Nov 2025</div>
+        <div class="e">&ldquo;Are moderate inferentialists committed to quantifier indeterminacy?&rdquo; &mdash; <span class="meta"><i>Fifty Years of Outline of a Theory of Truth</i>, CUNY</span></div>
+        <div class="d">Nov 2025</div>
+        <div class="e">&ldquo;Formality without Invariance&rdquo; &mdash; <span class="meta"><i>Beyond the Outline</i>, CUNY</span></div>
+        <div class="d">Oct 2025</div>
+        <div class="e">&ldquo;Can we follow the omega-rule?&rdquo; &mdash; <span class="meta"><i>NUSC Philosophy Discussion Session</i>, NUS</span></div>
+        <div class="d">Sep 2025</div>
+        <div class="e">&ldquo;Formality without Invariance&rdquo; &mdash; <span class="meta"><i>Polish Congress of Logic</i>, Nicolaus Copernicus University (keynote)</span></div>
+        <div class="d">Aug 2025</div>
+        <div class="e">&ldquo;Formality without semantics&rdquo; &mdash; <span class="meta"><i>Hong Kong Metaphysics Conference</i>, Lingnan University</span></div>
+        <div class="d">Jul 2025</div>
+        <div class="e">&ldquo;Can we follow the omega-rule?&rdquo; &mdash; <span class="meta"><i>Variations on Metamathematics</i>, University of Lugano, with Dan Waxman</span></div>
+        <div class="d">2025</div>
+        <div class="e">&ldquo;Formality without semantics&rdquo;, &ldquo;A New Semantics for Higher-Orderese&rdquo; &mdash; <span class="meta">Buenos Aires Logic Group</span></div>
+      </div>
+      <p class="links" style="margin-top:1.3rem">Earlier talks are in the <a href="cv.pdf">CV</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <div class="body">
+      <ul class="plain">
+        <li><a href="#">Logic and its Limits</a> <span class="meta">&mdash; NUS</span></li>
+        <li>Gödel's First Incompleteness Theorem <span class="meta">&mdash; UCL, after Smith's <i>Gödel without (too many) tears</i>:</span>
+          <a href="#">1</a> &middot; <a href="#">2</a> &middot; <a href="#">3</a> &middot; <a href="#">4</a> &middot; <a href="#">5</a> &middot; <a href="#">6</a></li>
+        <li><a href="#">Rise and Fall of the Fregean Empire</a> <span class="meta">&mdash; MCMP</span></li>
+        <li><a href="#">Tarskian Definitions of Truth</a> <span class="meta">&mdash; MCMP</span></li>
+        <li><a href="#">Lógica I &mdash; Guía de Ejercicios</a> <span class="meta">&mdash; UBA</span></li>
+        <li><a href="#">Lógica, Metalógica y Metametalógica</a> <span class="meta">&mdash; UBA, with P. Teijeiro, 2013</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ELSEWHERE ============ -->
+  <section id="elsewhere">
+    <h2>Elsewhere</h2>
+    <div class="body">
+      <ul class="plain">
+        <li><a href="https://open.spotify.com/episode/0YNKsvkwLanz6YsQ8L6qIJ">LogIn Project</a> interview, 2023</li>
+        <li><a href="https://logicamx.wixsite.com/logicamx/introduccion-a-las-paradojas">LógicaMX</a> on Yablo's Paradox for World Logic Day, 2023 (<a href="https://www.youtube.com/watch?v=TrnLCFsN5i8">video</a>)</li>
+        <li><a href="https://www.youtube.com/channel/UC7jPHVn9CVHK4a7XossSdkQ/featured">Red Stone Journal</a> interview, 2022</li>
+        <li><a href="https://pwips.home.blog/2021/01/21/interview-with-academics-5-dr-lavinia-picollo/">People for Womxn in Philosophy</a> interview, 2021</li>
+      </ul>
+      <p style="margin-top:1.4rem">3 Arts Link, Block AS3, Room #05-10, NUS 117570, Singapore</p>
+    </div>
+  </section>
+
+  <footer>Last updated August 2026.</footer>
+</div>
+</body>
+</html>
