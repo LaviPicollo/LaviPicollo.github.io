@@ -1,0 +1,146 @@
+:root{ --ink:#111; --muted:#6f6f6f; --rule:#dcdcda; --measure:42rem;
+  --paper:#faf6ed; --paper-veil:#faf6edee; --accent:#672440; --accent-soft:#cfb2c1; --accent-rule:#e7d8e0; --accent-dark:#461528; }
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Libertinus Serif","Hoefler Text",Palatino,"Palatino Linotype",Georgia,serif;
+  font-size:18px; line-height:1.55;}
+.wrap{max-width:60rem; margin:0 auto; padding:3rem 1.6rem 6rem;}
+/* Colour alone marks a link — no underline anywhere, including on hover.
+   Hover deepens the colour; keyboard focus gets a ring, since focus must stay
+   visible for anyone navigating without a mouse. */
+a{color:var(--accent); text-decoration:none}
+a:hover{color:var(--accent-dark)}
+a:focus-visible{outline:2px solid var(--accent-soft); outline-offset:2px; border-radius:1px}
+p{margin:0 0 1rem}
+
+/* header */
+h1{font-size:2rem; font-weight:400; margin:0 0 .2rem; letter-spacing:.01em}
+.sub{color:var(--muted); margin:0 0 .9rem}
+.toplinks{font-size:.9rem; margin:0 0 2rem}
+.toplinks a{margin-right:1.1rem}
+.lede{max-width:var(--measure)}
+
+/* jump nav — sticky, unobtrusive */
+.jump{position:sticky; top:0; background:var(--paper-veil); backdrop-filter:blur(4px);
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  padding:.55rem 0 .55rem .7rem; margin:0 0 2.4rem; font-size:.78rem; letter-spacing:.13em; text-transform:uppercase}
+.jump a{color:var(--muted); text-decoration:none; margin-right:1.5rem}
+.jump a:hover{color:var(--accent)}
+
+/* sections with margin labels, echoing the CV */
+section{display:grid; grid-template-columns:9rem 1fr; gap:0 2rem; margin:0 0 3.4rem; scroll-margin-top:3.4rem}
+section > h2{grid-column:1; margin:.3rem 0 0; font-size:.82rem; font-weight:400;
+  font-variant:small-caps; letter-spacing:.06em; text-align:right; color:var(--muted)}
+section > .body{grid-column:2; max-width:var(--measure)}
+@media (max-width:760px){
+  section{grid-template-columns:1fr}
+  section > h2{text-align:left; margin-bottom:.7rem}
+}
+
+h3.sub2{font-size:1rem; font-style:italic; font-weight:400; margin:2.1rem 0 1rem}
+h3.sub2:first-child{margin-top:0}
+.entries{display:grid; grid-template-columns:5.6rem 1fr; gap:1.05rem 1rem; margin:0}
+.entries .d{text-align:right; color:var(--muted); font-size:.9rem; padding-top:.15em}
+@media (max-width:760px){
+  .entries{grid-template-columns:1fr; gap:.2rem}
+  .entries .d{text-align:left}
+  .entries .e{margin-bottom:1rem}
+}
+.title{font-weight:400}
+.meta{color:var(--muted)}
+.links{font-size:.85rem; color:var(--muted); margin-top:.12rem}
+.links a{color:var(--muted)}
+details{margin-top:.3rem}
+details summary{font-size:.85rem; color:var(--muted); cursor:pointer; list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ "; }
+details[open] summary::before{content:"▾ "; }
+details .ab{font-size:.92rem; color:#3a3a3a; margin:.45rem 0 0; padding-left:.9rem; border-left:2px solid var(--rule)}
+ul.plain{margin:0; padding-left:1.1rem}
+ul.plain li{margin:0 0 .55rem}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--rule); color:var(--muted); font-size:.82rem}
+
+/* multi-page additions */
+/* A section on its own page needs no margin label: the nav already names it.
+   Drop the label column so the body starts at the page's left edge. */
+section.plain{grid-template-columns:1fr}
+section.plain > .body{grid-column:1}
+h1 a{text-decoration:none}
+.jump a[aria-current="page"]{color:var(--accent)}
+.entries .d{scroll-margin-top:3.4rem}
+
+/* The News block leads the front page, so it sits tighter than a full section. */
+#news{margin-bottom:2.6rem}
+/* The News label takes the banner's typography, so the two read as one system. */
+#news h3.sub2{font-size:.78rem; font-style:normal; font-weight:400;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--accent);
+  margin:0 0 1.1rem}
+
+/* ---- aubergine accents -------------------------------------------------
+   Restraint is the point: prose links and the current tab carry the colour,
+   the dense link rows under each entry stay grey until hovered. */
+h1 a{color:var(--accent)}                      /* the name carries the colour */
+.links a, footer a{color:var(--accent)}
+
+details summary{color:var(--accent)}
+details summary::before{color:var(--accent)}
+details .ab{border-left:2px solid var(--accent-soft)}
+.entries .d{color:var(--muted)}
+
+/* a little more of it: subsection headings, and the two rules that frame the page */
+h3.sub2{color:var(--accent)}
+.jump{border-top-color:var(--accent-rule); border-bottom-color:var(--accent-rule)}
+footer{border-top-color:var(--accent-rule)}
+
+/* The Abstract toggle rides on the end of the links row; the abstract itself
+   still drops onto its own line underneath when opened. */
+.links details, .links details summary{display:inline}
+.links details .ab{display:block}
+
+/* ---- masthead with portrait ----
+   Name and title on the left, a small portrait on the right. The photo is
+   deliberately modest: this is a text site and it should stay one. */
+/* Name on the left, portrait out at the right margin, flush with the banner and
+   the text column below. The block keeps its own clearance above the banner rule,
+   since the circle is taller than the two lines of text beside it. */
+.masthead{display:flex; align-items:center; justify-content:space-between; gap:2rem;
+  margin:0 0 1.5rem}
+.masthead .sub{margin-bottom:0}
+.portrait{width:84px; height:84px; object-fit:cover; border-radius:50%; flex:none;
+  filter:brightness(1.04) saturate(1.02)}
+@media (max-width:560px){ .portrait{width:76px; height:76px} }
+
+/* ---- background photograph ----
+   Held behind everything at low opacity and fixed to the viewport, so it reads
+   as a tint on the paper rather than a picture competing with the text. */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1;
+  background:url("bg.jpg") center/cover no-repeat;
+  opacity:.20;
+}
+
+/* ---- one right-hand margin ----
+   The banner rules, the masthead (and so the portrait) and the footer rule all
+   stop at the same measure as the text column, instead of running to the full
+   page width. Everything now lines up on one right edge. */
+.masthead, .jump, footer{max-width:var(--measure)}
+
+/* ---- phones ----
+   The banner wraps onto as many lines as it needs; the masthead stacks so the
+   portrait never squeezes the name; the photograph steps back so text stays
+   readable on a small, bright screen. */
+@media (max-width:620px){
+  .wrap{padding:2rem 1.1rem 4rem}
+  h1{font-size:1.6rem}
+  body{font-size:17px}
+  .masthead{gap:1rem}
+  .jump{padding:.5rem 0 .5rem .55rem; margin-bottom:1.8rem; letter-spacing:.09em; line-height:2}
+  .jump a{margin-right:1rem}
+  body::before{opacity:.08}
+  .entries{gap:.9rem 0}
+}
+@media (max-width:420px){
+  .masthead{flex-direction:row; align-items:center}
+  .portrait{width:60px; height:60px}
+  h1{font-size:1.45rem}
+}
